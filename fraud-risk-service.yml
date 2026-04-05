@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: fraud-risk-service
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8083
+
+risk:
+  rules:
+    max-single-transfer-amount: 50000
+    max-daily-transfer-amount: 100000
+    max-transfers-per-hour: 10
+    high-risk-countries: ["NG","KP","IR"]
+  scoring:
+    weights:
+      amount: 0.3
+      velocity: 0.3
+      country: 0.2
+      anomaly: 0.2
+  thresholds:
+    block-score: 80
+    review-score: 50
+
+logging:
+  level:
+    com.paymentplatform.fraud: INFO

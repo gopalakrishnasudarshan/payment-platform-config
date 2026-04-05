@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: payment-processor
+
+server:
+  port: 8085
+
+logging:
+  level:
+    com.paymentplatform.payment: INFO
