@@ -20,7 +20,7 @@ spring:
         spring.json.trusted.packages: "*"
   rabbitmq:
     host: localhost
-    port: 5672
+    port: 5580
     username: guest
     password: guest
 
