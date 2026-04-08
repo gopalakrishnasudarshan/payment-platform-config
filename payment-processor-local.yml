@@ -9,13 +9,28 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.use.type.headers: false
-        spring.json.value.default.type: com.paymentplatform.fraud.event.FraudCheckCompletedEvent
+        spring.json.value.default.type: com.paymentplatform.paymentprocessor.event.FraudCheckCompletedEvent
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
   rabbitmq:
     host: localhost
     port: 5580
     username: guest
     password: guest
+    exchange: transfer.exchange
+    queue: transfer.status.update
+    routing-key: transfer.status.update
+
+account-service:
+  base-url: http://localhost:8081
+
+kafka:
+  topics:
+    fraud-check-completed: fraud-check-completed
+    payment-processed: payment-processed
 
 logging:
   level:
-    com.paymentplatform.payment: DEBUG
+    com.paymentplatform.paymentprocessor: DEBUG
