@@ -19,6 +19,11 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
+account-service:
+  base-url: http://localhost:8081
+
+ml-scoring-service:
+  base-url: http://localhost:8090
 logging:
   level:
     com.paymentplatform.fraud: DEBUG
