@@ -16,7 +16,7 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.use.type.headers: false
-        spring.json.value.default.type: com.paymentplatform.fraud.event.FraudCheckCompletedEvent
+        spring.json.value.default.type: com.paymentplatform.fraud.event.TransferInitiatedEvent
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
