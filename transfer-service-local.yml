@@ -23,6 +23,9 @@ spring:
     port: 5580
     username: guest
     password: guest
+    exchange: transfer.exchange
+    queue: transfer.status.update
+    routing-key: transfer.status.update
 
 account-service:
   base-url: http://localhost:8081
