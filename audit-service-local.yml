@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/audit_db
+    url: jdbc:postgresql://localhost:5432/query_db
     username: postgres
     password: 12345
     driver-class-name: org.postgresql.Driver
@@ -9,13 +9,12 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-      group-id: audit-service-group
+      group-id: query-service-group
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       properties:
         spring.json.use.type.headers: false
-
 logging:
   level:
-    com.paymentplatform.audit: DEBUG
+    com.paymentplatform.query: DEBUG
