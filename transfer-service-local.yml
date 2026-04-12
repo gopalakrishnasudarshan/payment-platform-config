@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/transfer_db
     username: postgres
-    password: 12345
+    password: '{cipher}b75dfa046f001b313e27e929bbf6708dddad1980ca93b5ed70aad149a6af1ad3'
     driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
